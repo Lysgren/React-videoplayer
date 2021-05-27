@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
+import Spinner from './components/spinner/spinner'
+
 import './App.css'
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Hello world!</h1>
+      <Spinner />
     </div>
   )
 }
