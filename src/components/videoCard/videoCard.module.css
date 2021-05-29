@@ -1,0 +1,18 @@
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  background-color: rgb(219, 219, 219);
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 35px -12px rgba(255, 255, 255, 0.25);
+  width: calc(14rem + 120px);
+}
+
+.title {
+  margin: 12px;
+  color: #443e3e;
+  padding: 10px 0;
+  font-size: 1.45rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}

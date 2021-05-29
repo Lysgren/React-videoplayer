@@ -1,6 +1,7 @@
 .spinner {
   height: 75px;
   width: 75px;
+  margin: 50px;
   animation: spinner 1.2s linear infinite;
 }
 
