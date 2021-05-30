@@ -6,6 +6,7 @@ const VideoPlayer = props => {
   if (props.activeVideo) {
     videoPlayer = (
       <video
+        className={classes.videoPlayer}
         controls
         autoPlay
         src={props.activeVideo}

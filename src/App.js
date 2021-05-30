@@ -35,8 +35,10 @@ function App() {
   }, [fetchMoviesHandler])
 
   return (
-    <main className={classes.App}>
-      <h1>Small react videoplayer!</h1>
+    <main className={classes.app}>
+      <div className={classes.headerContainer}>
+        <h1 className={classes.headerText}>Small react videoplayer!</h1>
+      </div>
       <VideoPlayer activeVideo={activeVideo} />
       <MovieList videos={videos} setActiveVideo={setActiveVideoHandler} />
     </main>

@@ -1,3 +1,7 @@
 .videoContainer {
-  min-width: 800px;
+  margin: 3rem 0 1rem 0;
+}
+
+.videoPlayer {
+  height: 30rem;
 }
