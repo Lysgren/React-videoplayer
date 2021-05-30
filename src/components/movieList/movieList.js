@@ -3,7 +3,7 @@ import VideoCard from '../videoCard/videoCard'
 
 import classes from './movieList.module.css'
 
-const functionalComponent = props => {
+const MovieList = props => {
   
   let videos = props.videos.map(video => {
     return (
@@ -13,6 +13,7 @@ const functionalComponent = props => {
         description={video.description}
         image={video.image}
         video={video.video}
+        setActiveVideo={() => props.setActiveVideo(video.video)}
       />
     )
   })
@@ -28,4 +29,4 @@ const functionalComponent = props => {
   )
 }
 
-export default functionalComponent
+export default MovieList

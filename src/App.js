@@ -1,17 +1,19 @@
 import { useState, useEffect, useCallback } from 'react'
 
 import MovieList from './components/movieList/movieList'
+import VideoPlayer from './components/videoPlayer/videoPlayer'
 
 import classes from './App.module.css'
 
 function App() {
   const [videos, setVideos] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [activeVideo, setActiveVideo] = useState()
+
+  const setActiveVideoHandler = (videoUrl) => {
+    setActiveVideo(videoUrl)
+  }
 
   const fetchMoviesHandler = useCallback(async () => {
-    setIsLoading(true)
-    setError(null)
 
     try {
       const response = await fetch('https://gist.githubusercontent.com/mohammedhammoud/cf7aca4c87462cd061d4f2b1184392a8/raw/ea14389e293b478bdbace627d776ba6f7d735f14/teliatestdata.json')
@@ -24,10 +26,8 @@ function App() {
       setVideos(data)
     
     } catch(error) {
-      setError(error.message)
+      console.log(error.message)
     }
-    setIsLoading(false)
-
   }, [])
 
   useEffect(() => {
@@ -36,8 +36,9 @@ function App() {
 
   return (
     <main className={classes.App}>
-      <h1>Hello world!</h1>
-      <MovieList videos={videos} />
+      <h1>Small react videoplayer!</h1>
+      <VideoPlayer activeVideo={activeVideo} />
+      <MovieList videos={videos} setActiveVideo={setActiveVideoHandler} />
     </main>
   )
 }
